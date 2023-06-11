@@ -3,8 +3,16 @@ const THEME_GRID_STEP = 16;
 export const theme = {
   name: "theme",
   palette: {
-    background: {},
-    text: {},
+    background: {
+      primary: "#f5f5f5",
+      secondary: "#fefefe",
+      tertiary: "#ff6b6b",
+    },
+    text: {
+      primary: "#000000",
+      secondary: "#e9d9d8",
+      tertiary: "#FFFFFF",
+    },
     accent: {},
   },
   typography: {

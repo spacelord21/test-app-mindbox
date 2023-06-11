@@ -1,7 +1,11 @@
-import { styled } from "@shared/ui";
+import { PrimaryButton, styled } from "@shared/ui";
 
 const Container = styled.div``;
 
 export const Home = () => {
-  return <Container>hi there</Container>;
+  return (
+    <Container>
+      <PrimaryButton onClick={() => {}}>Create +</PrimaryButton>
+    </Container>
+  );
 };
