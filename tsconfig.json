@@ -2,16 +2,16 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
-      "es6",
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "outDir": "./dist",
+    "sourceMap": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,35 +19,20 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
+    "noEmit": false,
     "baseUrl": "src",
+    "jsx": "react-jsx",
     "paths": {
-      "@features/*": [
-        "features/*"
-      ],
-      "@shared/*": [
-        "shared/*"
-      ],
-      "@entities/*": [
-        "entities/*"
-      ],
-      "@widgets/*": [
-        "widgets/*"
-      ],
-      "@app/*": [
-        "app/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-    }
+      "@features/*" : ["features/*"],
+      "@app/*" : ["app/*"],
+      "@entities/*" :["entities/*"],
+      "@pages/*" : ["pages/*"],
+      "@processes/*" :["processes/*"],
+      "@shared/*" : ["shared/*"],
+    },
   },
   "include": [
-    "src/**/*","scripts"
+    "src"
   ],
   "exclude": ["node_modules"]
 }
