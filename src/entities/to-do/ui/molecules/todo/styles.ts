@@ -10,14 +10,29 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.spacing(1)}px;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ color: string; checked: boolean }>`
   display: flex;
   flex-direction: row;
-  /* justify-content: center;
-  align-items: center; */
+  background-color: ${({ color }) => color};
   &:hover {
-    opacity: 0.8;
+    opacity: 0.5;
     transition: opacity 0.2s linear;
   }
   cursor: pointer;
+  ${({ checked }) =>
+    checked &&
+    `
+    opacity: 0.5;
+    text-decoration: line-through;
+  `}
+  margin-left: ${({ theme }) => theme.spacing(1)}px;
+`;
+
+export const Input = styled.input``;
+
+export const Description = styled.div``;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;

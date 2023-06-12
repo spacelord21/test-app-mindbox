@@ -1,5 +1,6 @@
 import { TTodo, TTodoImportance } from "@entities/to-do/types";
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 type TFormType = {
   title: string;
@@ -33,9 +34,9 @@ export const useTodoForm = () => {
     return {
       createTime: new Date(),
       description: form.description,
-      id: 0,
+      id: uuid(),
       importance: form.importance,
-      isCompleted: false,
+      isCompleted: true,
       title: form.title,
     };
   };

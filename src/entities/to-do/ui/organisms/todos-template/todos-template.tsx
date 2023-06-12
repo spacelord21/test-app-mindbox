@@ -1,5 +1,5 @@
 import { Typography, styled } from "@shared/ui";
-import { CreateTodoForm } from "../../molecules";
+import { CreateTodoForm, SortButtons } from "../../molecules";
 import { Todos } from "../todos/todos";
 import { useTodos } from "@entities/to-do/model";
 
@@ -19,13 +19,18 @@ const Title = styled(Typography)`
 `;
 
 export const TodosTemplate = () => {
-  const { todos, addTodo } = useTodos();
+  const { todos, addTodo, setIsChecked, setCondition, conditionOfTodos } =
+    useTodos();
   return (
     <>
       <Title variant="title50">todos</Title>
       <Container>
         <CreateTodoForm addTodo={addTodo} />
-        <Todos todos={todos} />
+        <Todos todos={todos} setIsChecked={setIsChecked} />
+        <SortButtons
+          setCondition={setCondition}
+          currentType={conditionOfTodos}
+        />
       </Container>
     </>
   );

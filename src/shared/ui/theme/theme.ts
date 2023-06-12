@@ -17,6 +17,11 @@ export const theme = {
       primary: "#ff6b6b",
       secondary: "#e9d9d8",
     },
+    importance: {
+      important: "#FEC7AC",
+      secondary: "#FEF2B4",
+      unimportant: "#EFFDD3",
+    },
   },
   typography: {
     title: {

@@ -6,13 +6,14 @@ const Container = styled.div``;
 
 type TTodosProps = {
   todos: TTodo[];
+  setIsChecked: (id: string) => void;
 };
 
-export const Todos = ({ todos }: TTodosProps) => {
+export const Todos = ({ todos, setIsChecked }: TTodosProps) => {
   return (
     <Container>
       {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} />
+        <Todo todo={todo} key={index} setIsChecked={setIsChecked} />
       ))}
     </Container>
   );

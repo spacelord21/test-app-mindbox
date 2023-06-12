@@ -16,8 +16,8 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 60px;
+  width: 120px;
+  height: 40px;
   font-size: 17px;
   margin: 4px 2px;
   cursor: pointer;
