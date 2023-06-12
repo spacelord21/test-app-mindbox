@@ -1,4 +1,5 @@
-import { CreateTodoForm } from "@entities/to-do/ui";
+import { useTodos } from "@entities/to-do/model";
+import { CreateTodoForm, Todos } from "@entities/to-do/ui";
 import { styled } from "@shared/ui";
 
 const Container = styled.div`
@@ -10,9 +11,11 @@ const Container = styled.div`
 `;
 
 export const Home = () => {
+  const { todos, addTodo } = useTodos();
   return (
     <Container>
-      <CreateTodoForm />
+      <CreateTodoForm addTodo={addTodo} />
+      <Todos todos={todos} />
     </Container>
   );
 };

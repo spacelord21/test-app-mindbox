@@ -1,5 +1,4 @@
-import { styled } from "@shared/ui";
-import { Typography } from "../typography";
+import { styled, Typography } from "@shared/ui";
 
 export const Container = styled.div`
   padding: 6px;
@@ -10,7 +9,7 @@ export const Container = styled.div`
   margin: 8px 0;
   -webkit-tap-highlight-color: transparent;
   &:hover {
-    background-color: ${({ theme }) => theme.palette.background.tertiary};
+    background-color: ${({ theme }) => theme.palette.accent.primary};
     opacity: 0.9;
   }
   &:focus-within {
@@ -24,6 +23,7 @@ export const Title = styled(Typography)`
   display: inline-block;
   line-height: 20px;
   padding: 0 8px;
+  text-transform: lowercase;
 `;
 
 export const RadioButton = styled.input`

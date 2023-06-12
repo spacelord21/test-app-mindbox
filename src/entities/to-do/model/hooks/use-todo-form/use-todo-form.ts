@@ -1,4 +1,4 @@
-import { TTodoImportance } from "@entities/to-do/types";
+import { TTodo, TTodoImportance } from "@entities/to-do/types";
 import { useState } from "react";
 
 type TFormType = {
@@ -15,13 +15,31 @@ export const useTodoForm = () => {
   });
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const name = e.target.name;
+    const { name, value } = e.target;
     console.log(name);
     setForm({
       ...form,
-      [name]: e.target.value,
+      [name]: value,
     });
   };
 
-  return { ...form, onChangeHandler };
+  const onImportanceChangeHandler = (value: TTodoImportance) => {
+    setForm({
+      ...form,
+      importance: value,
+    });
+  };
+
+  const createTodo = (): TTodo => {
+    return {
+      createTime: new Date(),
+      description: form.description,
+      id: 0,
+      importance: form.importance,
+      isCompleted: false,
+      title: form.title,
+    };
+  };
+
+  return { ...form, onChangeHandler, onImportanceChangeHandler, createTodo };
 };

@@ -1,6 +1,7 @@
 import { useTodoForm } from "@entities/to-do/model";
-import { TTodoImportance } from "@entities/to-do/types";
-import { Input, RadioInput, styled } from "@shared/ui";
+import { TTodo, TTodoImportance } from "@entities/to-do/types";
+import { Input, PrimaryButton, styled } from "@shared/ui";
+import { RadioInput } from "../../atoms";
 
 const Container = styled.div`
   display: flex;
@@ -14,10 +15,19 @@ const RadiosContainer = styled.div`
   flex-direction: row;
 `;
 
-type TCreateTodoFormProps = {};
+type TCreateTodoFormProps = {
+  addTodo: (todo: TTodo) => void;
+};
 
-export const CreateTodoForm = () => {
-  const { description, importance, onChangeHandler, title } = useTodoForm();
+export const CreateTodoForm = ({ addTodo }: TCreateTodoFormProps) => {
+  const {
+    description,
+    importance,
+    onChangeHandler,
+    title,
+    onImportanceChangeHandler,
+    createTodo,
+  } = useTodoForm();
   const importances: TTodoImportance[] = [
     "IMPORTANT",
     "SECONDARY",
@@ -42,12 +52,19 @@ export const CreateTodoForm = () => {
           <RadioInput
             value={item}
             key={index}
-            onChange={onChangeHandler}
+            setValue={onImportanceChangeHandler}
             checked={item === importance}
             name={"importance"}
           />
         ))}
       </RadiosContainer>
+      <PrimaryButton
+        onClick={() => {
+          addTodo(createTodo());
+        }}
+      >
+        Create +
+      </PrimaryButton>
     </Container>
   );
 };
