@@ -24,8 +24,8 @@ export const theme = {
       fontFamily: "Roboto",
       letterSpacing: "0px",
     },
-    title40: {
-      size: "40px",
+    title50: {
+      size: "50px",
       fontFamily: "Roboto",
       letterSpacing: "0px",
     },

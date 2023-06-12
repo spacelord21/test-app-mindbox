@@ -16,7 +16,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 110px;
+  width: 100%;
   height: 60px;
   font-size: 17px;
   margin: 4px 2px;
@@ -39,8 +39,8 @@ const Button = styled.button`
     transform: translate(-50%, -50%);
     transition: all 0.5s ease;
   }
-  &:hover:after {
-    width: 210px;
+  &:not(:disabled):hover:after {
+    width: 100%;
     height: 200px;
     opacity: 1;
   }
@@ -50,6 +50,9 @@ const Button = styled.button`
   &:active {
     transform: translateY(2px);
     box-shadow: none;
+  }
+  &:disabled {
+    opacity: 0.7;
   }
 `;
 

@@ -1,5 +1,6 @@
 import { Home } from "@pages/home";
 import { AppThemeProvider, RobotoFontStyle, styled } from "@shared/ui";
+import "./styles.css";
 
 const Container = styled.div``;
 

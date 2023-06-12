@@ -23,7 +23,9 @@ export const RadioInput = ({
         name={name}
         onChange={() => {}}
       />
-      <Title variant="body16">{value}</Title>
+      <Title variant="body16" className="title">
+        {value}
+      </Title>
     </Container>
   );
 };

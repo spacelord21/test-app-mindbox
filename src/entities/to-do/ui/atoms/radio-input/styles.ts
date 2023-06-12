@@ -7,9 +7,11 @@ export const Container = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
   margin: 8px 0;
+  color: ${({ theme }) => theme.palette.text.primary};
   -webkit-tap-highlight-color: transparent;
   &:hover {
     background-color: ${({ theme }) => theme.palette.accent.primary};
+    color: ${({ theme }) => theme.palette.text.tertiary};
     opacity: 0.9;
   }
   &:focus-within {
@@ -18,7 +20,6 @@ export const Container = styled.div`
   }
 `;
 export const Title = styled(Typography)`
-  color: ${({ theme }) => theme.palette.text.primary};
   vertical-align: middle;
   display: inline-block;
   line-height: 20px;

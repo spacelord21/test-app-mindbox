@@ -1,7 +1,7 @@
 import { TTodo } from "@entities/to-do/types";
-import { styled } from "@shared/ui";
-
-const Container = styled.div``;
+import { Typography, styled } from "@shared/ui";
+import { useState } from "react";
+import { Container, Title } from "./styles";
 
 type TTodoProps = {
   todo: TTodo;
@@ -9,11 +9,12 @@ type TTodoProps = {
 
 export const Todo = ({ todo }: TTodoProps) => {
   const { createTime, description, id, importance, isCompleted, title } = todo;
+  const [isOpen, setOpen] = useState(false);
   return (
     <Container>
-      {title}
-      {description}
-      {importance}
+      <Title>
+        <Typography variant="title">{title}</Typography>
+      </Title>
     </Container>
   );
 };

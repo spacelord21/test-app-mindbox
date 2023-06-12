@@ -16,7 +16,6 @@ export const useTodoForm = () => {
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log(name);
     setForm({
       ...form,
       [name]: value,

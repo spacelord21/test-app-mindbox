@@ -5,21 +5,27 @@ type TInputProps = {
   name: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  onClick?: () => void;
+  maxLength?: number;
 };
 
-export const Input = ({ name, onChange, placeholder, value }: TInputProps) => {
+export const Input = ({
+  name,
+  onChange,
+  placeholder,
+  value,
+  onClick,
+  maxLength,
+}: TInputProps) => {
   return (
-    <Container className="field field_v2">
-      <Label htmlFor={name} className="ha-screen-reader">
-        {placeholder}
-      </Label>
+    <Container onClick={onClick}>
       <StyledInput
         onChange={onChange}
         id={name}
-        className="field__input"
         placeholder={placeholder}
         value={value}
         name={name}
+        maxLength={maxLength}
       />
     </Container>
   );
