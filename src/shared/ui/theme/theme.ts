@@ -13,7 +13,9 @@ export const theme = {
       secondary: "#e9d9d8",
       tertiary: "#FFFFFF",
     },
-    accent: {},
+    accent: {
+      primary: "#ff6b6b",
+    },
   },
   typography: {
     title: {

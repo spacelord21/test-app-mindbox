@@ -1,11 +1,18 @@
-import { PrimaryButton, styled } from "@shared/ui";
+import { CreateTodoForm } from "@entities/to-do/ui";
+import { styled } from "@shared/ui";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+`;
 
 export const Home = () => {
   return (
     <Container>
-      <PrimaryButton onClick={() => {}}>Create +</PrimaryButton>
+      <CreateTodoForm />
     </Container>
   );
 };
