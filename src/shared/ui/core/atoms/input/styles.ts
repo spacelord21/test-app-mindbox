@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 50px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.accent.tertiary};
   justify-content: center;
   align-items: center;
 `;

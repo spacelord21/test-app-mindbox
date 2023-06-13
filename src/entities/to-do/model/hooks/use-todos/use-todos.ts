@@ -26,19 +26,25 @@ export const useTodos = () => {
   }, [conditionOfTodos, todos]);
 
   const setIsChecked = (id: string) => {
-    const item = todos.find((item) => item.id === id);
-    if (item) {
-      setTodos((state) => {
-        const arr = state.filter((todo) => todo.id !== id);
-        return [{ ...item, isCompleted: !item.isCompleted }, ...arr];
-      });
-    }
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
   };
 
-  const deleteTodo = (id: string) => {
+  const removeTodoById = (id: string) => {
     const arr = todos.filter((todo) => todo.id === id);
     setTodos(arr);
   };
+
+  const removeCompletedTodos = () => {
+    setTodos((todos) => todos.filter((todo) => !todo.isCompleted));
+  };
+
+  const todosLeft = useMemo(() => {
+    return todos.filter((item) => !item.isCompleted).length;
+  }, [todos]);
 
   const fetchTodos = () => {
     const value = window.localStorage.getItem(TODOS_KEY);
@@ -69,5 +75,7 @@ export const useTodos = () => {
     setIsChecked,
     setCondition,
     conditionOfTodos,
+    todosLeft,
+    removeCompletedTodos,
   };
 };

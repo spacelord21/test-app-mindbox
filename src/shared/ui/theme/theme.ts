@@ -9,16 +9,17 @@ export const theme = {
       tertiary: "#ff6b6b",
     },
     text: {
-      primary: "#000000",
+      primary: "#878787",
       secondary: "#e9d9d8",
       tertiary: "#FFFFFF",
     },
     accent: {
       primary: "#ff6b6b",
       secondary: "#e9d9d8",
+      tertiary: "#e4e4e4",
     },
     importance: {
-      important: "#FEC7AC",
+      important: "#FF3B2D",
       secondary: "#FEF2B4",
       unimportant: "#EFFDD3",
     },

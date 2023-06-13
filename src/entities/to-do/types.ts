@@ -7,4 +7,4 @@ export type TTodo = {
   importance: TTodoImportance;
 };
 
-export type TTodoImportance = "IMPORTANT" | "UNIMPORTANT" | "SECONDARY";
+export type TTodoImportance = "IMPORTANT" | "USUAL";

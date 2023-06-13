@@ -7,6 +7,8 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  margin-top: ${({ theme }) => theme.spacing(1)}px;
+  width: 30%;
 `;
 
 const Button = styled.div<{ active: boolean }>`
@@ -14,16 +16,17 @@ const Button = styled.div<{ active: boolean }>`
   outline: none;
   transition: opacity 0.2s ease;
   background-color: ${({ theme }) => theme.palette.background.secondary};
-  border: 0.5px solid grey;
+  color: ${({ theme }) => theme.palette.text.primary};
+
   padding: 6px;
   cursor: pointer;
   &:hover {
     opacity: 0.7;
   }
-  ${({ active }) =>
+  ${({ active, theme }) =>
     active &&
     `
-    opacity: 0.5;
+    border: 0.5px solid ${theme.palette.accent.tertiary};
   `}
 `;
 
@@ -45,7 +48,7 @@ export const SortButtons = ({
           onClick={() => setCondition(type)}
           active={type === currentType}
         >
-          <Typography variant="button">{type}</Typography>
+          <Typography variant="body14">{type}</Typography>
         </Button>
       ))}
     </Container>

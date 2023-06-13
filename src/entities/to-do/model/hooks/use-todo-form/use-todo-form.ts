@@ -36,7 +36,7 @@ export const useTodoForm = () => {
       description: form.description,
       id: uuid(),
       importance: form.importance,
-      isCompleted: true,
+      isCompleted: false,
       title: form.title,
     };
   };

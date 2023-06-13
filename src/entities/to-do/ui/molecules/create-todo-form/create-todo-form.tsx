@@ -38,11 +38,7 @@ export const CreateTodoForm = ({ addTodo }: TCreateTodoFormProps) => {
     onImportanceChangeHandler,
     createTodo,
   } = useTodoForm();
-  const importances: TTodoImportance[] = [
-    "IMPORTANT",
-    "SECONDARY",
-    "UNIMPORTANT",
-  ];
+  const importances: TTodoImportance[] = ["IMPORTANT", "USUAL"];
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>

@@ -13,7 +13,11 @@ export const Todos = ({ todos, setIsChecked }: TTodosProps) => {
   return (
     <Container>
       {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} setIsChecked={setIsChecked} />
+        <Todo
+          todo={todo}
+          key={todo.id}
+          setIsChecked={() => setIsChecked(todo.id)}
+        />
       ))}
     </Container>
   );
